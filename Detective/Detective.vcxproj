@@ -126,6 +126,19 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="houseBegin.txt" />
+    <Text Include="houseBrothersBedroom.txt" />
+    <Text Include="houseBrothersBedroomBoxes.txt" />
+    <Text Include="houseKitchen.txt" />
+    <Text Include="houseKitchenMail.txt" />
+    <Text Include="houseKitchenTrash.txt" />
+    <Text Include="houseStudy.txt" />
+    <Text Include="houseStudyBookshelf.txt" />
+    <Text Include="HouseStudyBookshelfBook.txt" />
+    <Text Include="houseStudyDesk.txt" />
+    <Text Include="houseVictimBedroom.txt" />
+    <Text Include="houseVictimsBedroomBox.txt" />
+    <Text Include="houseVictimsBedroomNightstand.txt" />
     <Text Include="pro1.txt" />
     <Text Include="pro2.txt" />
     <Text Include="harr.txt" />
