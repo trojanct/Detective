@@ -231,7 +231,7 @@ void showprolouge(string item, int array[][50])
 	}
 	else
 	{
-		cout << "I don't have that itme" << endl;
+		cout << "I don't have that item" << endl;
 
 	}
 
@@ -245,7 +245,6 @@ void talkprolouge(string item, int array[][50])
 	
 	if (item.length() < 5)
 	{
-
 		cout << "I can't talk to no one" << endl;
 	}
 	else if (item.compare(5, Harrison.length(), "harrison") == 0 || item.compare(5, Harrison.length(), "Harrison") == 0 && array[0][1] == 0)
