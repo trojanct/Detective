@@ -128,13 +128,18 @@
     <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="apbathroom.txt" />
     <Text Include="apbed.txt" />
     <Text Include="apcouch.txt" />
     <Text Include="apdvd.txt" />
+    <Text Include="apdvd2.txt" />
     <Text Include="aprt.txt" />
+    <Text Include="apstand.txt" />
     <Text Include="aptable.txt" />
     <Text Include="aptgame.txt" />
+    <Text Include="aptowel.txt" />
     <Text Include="aptsmalldoor.txt" />
+    <Text Include="apwaste.txt" />
     <Text Include="houseBegin.txt" />
     <Text Include="houseBrothersBedroom.txt" />
     <Text Include="houseBrothersBedroomBoxes.txt" />
@@ -153,6 +158,7 @@
     <Text Include="harr.txt" />
     <Text Include="pro3.txt" />
     <Text Include="body.txt" />
+    <Text Include="sim.txt" />
     <Text Include="table.txt" />
     <Text Include="notes.txt" />
     <Text Include="pro4.txt" />

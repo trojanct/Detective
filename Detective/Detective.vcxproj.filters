@@ -113,6 +113,24 @@
     <Text Include="aptsmalldoor.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="apdvd2.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="sim.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="apbathroom.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="aptowel.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="apstand.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="apwaste.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameheader.h">

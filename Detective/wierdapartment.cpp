@@ -11,24 +11,38 @@ void chapter3()
 	int apartarray[6][50]= { {0} };
 	string text, choice;
 
-	apartarray[5][0] = 1;
-	apartarray[5][1] = 1;
-	apartarray[5][2] = 1;
-	apartarray[5][3] = 1;
-	string proitems[20] = { "badge", "picture","folder","key" };
+	apartarray[5][16] = 1;
+	apartarray[5][17] = 1;
+	apartarray[5][18] = 1;
+	apartarray[5][19] = 1;
+	string items[20] = { "badge", "picture","folder","key" };
 
 	file.open("aprt.txt");
 	getline(file, text);
 	cout << text << endl;
 	text.clear();
 	file.close();
-
 	while (apartarray[0][0] != 1)
 	{
 		getline(cin, choice);
-		aprtmenu(choice, apartarray, proitems);
+		aprtmenu(choice, apartarray, items);
 
 	}
+	
+
+	file.open("apbathroom.txt");
+	getline(file, text);
+	cout << text << endl;
+	text.clear();
+	file.close();
+
+	while (apartarray[0][1] != 1)
+	{
+		getline(cin, choice);
+		aprtmenu(choice, apartarray, items);
+
+	}
+
 
 
 
@@ -48,7 +62,7 @@ void aprtmenu(string choice, int array[][50], string items[])
 		talkaprt(choice, array);
 		break;
 	case 3:
-		checkaprt(choice, array);
+		checkaprt(choice, array,items);
 		break;
 	case 4:
 		notesaprt(choice, array);
@@ -60,7 +74,7 @@ void aprtmenu(string choice, int array[][50], string items[])
 		itemaprt(choice, array, items);
 		break;
 	case 7:
-		useaprt;
+		useaprt( choice, array, items);
 		break;
 	default:
 		break;
@@ -133,7 +147,7 @@ void talkaprt(string item, int array[][50])
 	}
 
 }
-void checkaprt(string item, int array[][50])
+void checkaprt(string item, int array[][50],string items[])
 {
 	string stand = "stand";
 	string table = "table";
@@ -141,9 +155,11 @@ void checkaprt(string item, int array[][50])
 	string door = "door";
 	string fridge = "fridge";
 	string game = "playboxswitch";
-	string small = "smalldoor";
+	string small = "small door";
 	string dvd = "dvd player";
 	string couch = "couch";
+	string waste = "waste basket";
+	string towel = "towel";
 
 	ifstream file;
 	string text;
@@ -161,10 +177,27 @@ void checkaprt(string item, int array[][50])
 	else if (item.compare(6, table.length(), "table") == 0 || item.compare(6, table.length(), "Table") == 0)
 	{
 		
-		file.open("aptable.txt");
+		
+			file.open("aptable.txt");
+			getline(file, text);
+			cout << text << endl;
+			file.close();
+			if (array[3][0] == 0)
+			{
+				cout << "This is interesting I swipe one of the magazines with Claire’s name and the other address." << endl;
+				items[8] = "magazine";
+			}
+			array[3][0] = 1;
+		
+
+	}
+	else if (item.compare(6, stand.length(), "stand") == 0 || item.compare(6, stand.length(), "Stand") == 0)
+	{
+		file.open("apstand.txt");
 		getline(file, text);
 		cout << text << endl;
 		file.close();
+		
 
 	}
 	else if (item.compare(6, bed.length(), "bed") == 0 || item.compare(6, bed.length(), "Bed") == 0)
@@ -173,12 +206,22 @@ void checkaprt(string item, int array[][50])
 		getline(file, text);
 		cout << text << endl;
 		file.close();
+		array[3][2] = 1;
 
 	}
 	else if (item.compare(6, door.length(), "door") == 0 || item.compare(6, door.length(), "Door") == 0)
 	{
+		if (array[0][0] == 0)
+		{
 		
-		cout << "the door is locked somehow i need a key to get int" << endl;
+			cout << "the door is locked somehow i need a key to get in" << endl;
+		}
+		else
+		{
+			cout << "door is unlocked now";
+		}
+
+
 	}
 	else if (item.compare(6, game.length(), "playboxswitch") == 0 || item.compare(6, game.length(), "Playboxswitch") == 0)
 	{
@@ -186,9 +229,15 @@ void checkaprt(string item, int array[][50])
 		getline(file, text);
 		cout << text << endl;
 		file.close();
+		if (array[3][1] == 0)
+		{
+			cout << "Wait a moment what is this! It had a cracked spine and when I looked inside, I found a note. “Keep this as long as you like -Raad.” This was the game I lent Michael what is this doing here we’ll I’m taking this back but how did it get here." << endl;
+			items[9] = "game";
+		}
+		array[3][1] = 1;
 
 	}
-	else if (item.compare(6, small.length(), "smalldoor") == 0 || item.compare(6, small.length(), "Smalldoor") == 0)
+	else if (item.compare(6, small.length(), "small door") == 0 || item.compare(6, small.length(), "Small door") == 0)
 	{
 		file.open("aptsmalldoor.txt");
 		getline(file, text);
@@ -198,7 +247,14 @@ void checkaprt(string item, int array[][50])
 	}
 	else if (item.compare(6, dvd.length(), "dvd player") == 0 || item.compare(6, dvd.length(), "DVD Player") == 0)
 	{
-
+		if (array[1][1] == 1 && array[5][3] == 0 )
+		{
+			file.open("apdvd2.txt");
+			getline(file, text);
+			cout << text << endl;
+			file.close();
+			array[3][6] = 1;
+		}
 		file.open("apdvd.txt");
 		getline(file, text);
 		cout << text << endl;
@@ -207,11 +263,34 @@ void checkaprt(string item, int array[][50])
 	}
 	else if (item.compare(6, couch.length(), "couch") == 0 || item.compare(6, couch.length(), "Couch") == 0)
 	{
-		file.open("apcouch.txt");
+		
+			file.open("apcouch.txt");
+			getline(file, text);
+			cout << text << endl;
+			file.close();
+			array[3][4] = 1;
+			if (array[5][1] == 0)
+			{
+				cout << "There is also a remote no batteries though." << endl;
+			}
+
+	}
+
+	else if ((item.compare(6, towel.length(), "towel") == 0 || item.compare(6, towel.length(), "Towel") == 0) && array[0][0] == 1)
+	{
+		file.open("aptowel.txt");
 		getline(file, text);
 		cout << text << endl;
 		file.close();
-
+		//33
+	}
+	else if ((item.compare(6, waste.length(), "waste basket") == 0 || item.compare(6, waste.length(), "Waste basket") == 0) && array[0][0] == 1)
+	{
+		file.open("apwaste.txt");
+		getline(file, text);
+		cout << text << endl;
+		file.close();
+		array[3][3] = 1;
 	}
 	else
 	{
@@ -248,13 +327,13 @@ void takeaprt(string item, int array[][50], string items[])
 
 		cout << "can't take that" << endl;
 	}
-	else if (item.compare(5, batteries.length(), "batteries") == 0 || item.compare(5, batteries.length(), "Batteries") == 0 && array[4][0] == 0)
+	else if ((item.compare(5, batteries.length(), "batteries") == 0 || item.compare(5, batteries.length(), "Batteries") == 0) && array[3][2] == 1)
 	{
 		if (array[5][0] == 0)
 		{
 			cout << "I took some of the batteries." << endl;
-			array[5][0] == 1;
-			item[4] == 1;
+			array[5][0] = 1;
+			items[4] = batteries;
 		}
 		else
 		{
@@ -262,14 +341,14 @@ void takeaprt(string item, int array[][50], string items[])
 		}
 
 	}
-	else if (item.compare(5, remote.length(), "remote") == 0 || item.compare(5, remote.length(), "Remote") == 0 && array[4][0] == 0)
+	else if((item.compare(5, remote.length(), "remote") == 0 || item.compare(5, remote.length(), "Remote") == 0) && array[3][4] == 1)
 	{
 
 		if (array[5][1] == 0)
 		{
-			cout << "I got the remote from the innards of the couch" << endl;
-			array[5][1] == 1;
-			item[5] == 1;
+			cout << "I got the remote from the innards of the couch it needs some batteris to \"use\" on it" << endl;
+			array[5][1] = 1;
+			items[5] = remote;
 		}
 		else
 		{
@@ -277,28 +356,28 @@ void takeaprt(string item, int array[][50], string items[])
 		}
 
 	}
-	else if (item.compare(5, bath.length(), "bathkey") == 0 || item.compare(5, bath.length(), "Bathkey") == 0 && array[4][0] == 0)
+	else if((item.compare(5, bath.length(), "bathkey") == 0 || item.compare(5, bath.length(), "Bathkey") == 0) && array[1][1] == 1)
 	{
 
-		if (array[5][3] == 1)
+		if (array[5][3] == 0)
 		{
 			cout << "I took the bathkey off of the ground" << endl;
-			array[5][3] == 1;
-			item[6] == 1;
+			array[5][3] = 1;
+			items[6] = bath;
 		}
 		else
 		{
 			cout << "I already have that key" << endl;
 		}
 	}
-	else if (item.compare(5, sim.length(), "sim card") == 0 || item.compare(5, sim.length(), "Sim card") == 0 )
+	else if((item.compare(5, sim.length(), "sim card") == 0 || item.compare(5, sim.length(), "Sim card") == 0) && array[3][3] == 1)
 
-{
-		if (array[5][2] == 1)
+	{
+		if (array[5][2] == 0)
 		{
 			cout << "I grabbed the sim card it could have information on it" << endl;
-			array[5][2] == 1;
-			item[7] == 1;
+			array[5][2] = 1;
+			items[7] = sim;
 		}
 		else
 		{
@@ -309,7 +388,7 @@ void takeaprt(string item, int array[][50], string items[])
 	else if (item.compare(5, money.length(), "money") == 0 || item.compare(5, money.length(), "Money") == 0)
 	{
 		
-
+		cout << " i can't take that im a good cop" << endl;
 	}
 	else
 	{
@@ -321,25 +400,98 @@ void takeaprt(string item, int array[][50], string items[])
 }
 void itemaprt(string item, int array[][50], string items[])
 {
-	//int itemnumber = sizeof(items) / sizeof(string);
-	int itemnumber = 3;
-	//cout << itemnumber << endl;
+	
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < sizeof(items); i++)
 	{
 		cout << items[i] << endl;
 	}
-	if (itemnumber == 3)
-	{
-		array[0][0] = 4;
-	}
+	
 
 
 
 
 }
-void useaprt()
+void useaprt(string item, int array[][50], string items[])
 {
-	// give micheal the photo
-	cout << "nothing to use" << endl;
+	ifstream file;
+	string text;
+	string remote = "remote";
+	string batteries = "batteries";
+	string sim = "sim card";
+	string bath = "bathkey";
+
+
+	if (item.length() < 4)
+	{
+
+		cout << "can't use that" << endl;
+	}
+	else if (item.compare(4, batteries.length(), "batteries") == 0 || item.compare(4, batteries.length(), "Batteries") == 0 && array[5][0] == 1)
+	{
+		if (array[5][0] == 1 && array[1][0] == 0)
+		{
+			cout << "I put the batteries into the remote. I could \"use\" this remote now that it has power" << endl;
+			array[1][0] = 1;
+		}
+		else if (array[1][0] == 1)
+		{
+			cout << "The batteries are already in the remote" << endl;
+		}
+		else
+		{
+			cout << "don't have that" << endl;
+		}
+		
+
+
+	}
+	else if( (item.compare(4, remote.length(), "remote") == 0 || item.compare(4, remote.length(), "Remote") == 0 )&& array[5][1] == 1)
+	{
+		if (array[1][1] == 0 && array[1][0] == 1)
+		{
+			cout << "I click the on button on the remote and a loud clinking noise starts to come out of the dvd player i press open and it stops what was that sound" << endl;
+			array[1][1] = 1;
+		}
+		else if (array[1][0] == 0)
+		{
+			cout << "The remote needs batteries" << endl;
+		}
+		else
+		{
+			cout << "not much use for this remote now" << endl;
+		}
+
+	}
+	else if (item.compare(4, bath.length(), "bathkey") == 0 || item.compare(4, bath.length(), "Bathkey") == 0 && array[5][3] == 1)
+	{
+		if (array[0][0] == 0)
+		{
+			array[0][0] = 1;
+		}
+		else
+		{
+			cout << "already used that to open the door" << endl;
+		}
+	}
+	else if ((item.compare(4, sim.length(), "sim card") == 0 || item.compare(4, sim.length(), "Sim Card") == 0) && array[5][2] == 1)
+	{
+		if (array[3][3] == 1)
+		{
+			file.open("sim.txt");
+			getline(file, text);
+			cout << text << endl;
+			file.close();
+			array[0][1] = 1;
+		}
+		else
+		{
+			cout << "cant use that yet" << endl;
+		}
+	}
+	else
+	{
+		cout << "can't use that" << endl;
+	}
+
 }
