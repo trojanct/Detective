@@ -127,6 +127,13 @@
     <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="apbed.txt" />
+    <Text Include="apcouch.txt" />
+    <Text Include="apdvd.txt" />
+    <Text Include="aprt.txt" />
+    <Text Include="aptable.txt" />
+    <Text Include="aptgame.txt" />
+    <Text Include="aptsmalldoor.txt" />
     <Text Include="pro1.txt" />
     <Text Include="pro2.txt" />
     <Text Include="harr.txt" />
