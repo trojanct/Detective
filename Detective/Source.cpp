@@ -29,7 +29,6 @@ void useprolouge();
 
 const int m = 50;
 
-
 void prolouge()
 {
 	ifstream file;
@@ -53,7 +52,6 @@ void prolouge()
 	{
 		getline(cin, choice);
 		menu(choice, proarray, proitems);
-		
 	}
 
 	pro.erase(3, 5);
@@ -64,12 +62,10 @@ void prolouge()
 	text.clear();
 	file.close();
 	
-
 	while (proarray[0][0] != 2)
 	{
 		getline(cin, choice);
 		menu(choice, proarray, proitems);
-
 	}
 
 	pro.erase(3, 5);
@@ -88,8 +84,6 @@ void prolouge()
 		{
 			proarray[0][0] = 3;
 		}
-
-
 	}
 
 	pro.erase(3, 5);
@@ -104,7 +98,6 @@ void prolouge()
 	{
 		getline(cin, choice);
 		menu(choice, proarray, proitems);
-
 	}
 	
 	pro.erase(3, 5);
@@ -115,23 +108,11 @@ void prolouge()
 	text.clear();
 	file.close();
 	
-	
-
-
-
-
-	
 	cout << string(10, '\n');
 	//needs to be fixed because of a security flaw but using it for time being
 	//system("CLS");
 	pro.erase(3,5);
-	cout << "End of prolouge" << endl;
-	
-	
-
-
-
-
+	cout << "End of prolouge." << endl;
 }
 
 //void house()
@@ -174,11 +155,10 @@ int main()
 	chapter2();
 	chapter3();
 	chapter4();
-
 }
+
 void menu(string choice, int array[][50], string items[])
 {
-
 	int n = checkchoice(choice);
 
 	switch (n)
@@ -205,7 +185,7 @@ void menu(string choice, int array[][50], string items[])
 		useprolouge;
 		break;
 	case 8:
-		cout << "can't search right now" << endl;
+		cout << "Can't search right now." << endl;
 		break;
 	default:
 		break;
@@ -248,28 +228,30 @@ int checkchoice(string choice)
 	}
 	else
 	{
-		cout << "I should not do that right now" << endl;
+		cout << "I should not do that right now." << endl;
 		return 0;
 	}
 }
+
 void showprolouge(string item, int array[][50])
 {
 	string badge = "badge";
 
 	if(item.length() < 5)
 	{
-		cout << "I don't have that item" << endl;
+		cout << "I don't have that item." << endl;
 	}
 	else if(item.compare(5, badge.length(), "badge") == 0 || item.compare(5, badge.length(), "Badge") == 0 && array[0][0] == 0)
 	{
 		array[0][0] = 1;
-		cout << "I showed my badge to the officer" << endl;
+		cout << "I showed my badge to the officer." << endl;
 	}
 	else
 	{
-		cout << "I don't have that itme" << endl;
+		cout << "I don't have that item." << endl;
 	}
 }
+
 void talkprolouge(string item, int array[][50])
 {
 	string Harrison = "harrison";
@@ -278,8 +260,7 @@ void talkprolouge(string item, int array[][50])
 	
 	if (item.length() < 5)
 	{
-
-		cout << "I can't talk to no one" << endl;
+		cout << "I can't talk to no one." << endl;
 	}
 	else if (item.compare(5, Harrison.length(), "harrison") == 0 || item.compare(5, Harrison.length(), "Harrison") == 0 && array[0][1] == 0)
 	{
@@ -289,14 +270,13 @@ void talkprolouge(string item, int array[][50])
 		getline(file, text);
 		cout << text << endl;
 		file.close();
-
 	}
 	else
 	{
-		cout << "they are not here" << endl;
+		cout << "They are not here." << endl;
 	}
-
 }
+
 void checkprolouge(string item, int array[][50])
 {
 	string Body = "body";
@@ -306,8 +286,7 @@ void checkprolouge(string item, int array[][50])
 
 	if (item.length() < 6)
 	{
-
-		cout << "can't check that" << endl;
+		cout << "Can't check that." << endl;
 	}
 	else if (item.compare(6, Body.length(), "body") == 0 || item.compare(6, Body.length(), "Body") == 0 && array[3][0] == 0)
 	{
@@ -329,9 +308,10 @@ void checkprolouge(string item, int array[][50])
 	}
 	else
 	{
-		cout << "can't check that" << endl;
+		cout << "Can't check that." << endl;
 	}
 }
+
 void notes(string item, int array[][50])
 {
 	ifstream file;
@@ -342,6 +322,7 @@ void notes(string item, int array[][50])
 	cout << text << endl;
 	file.close();
 }
+
 void takeprolouge(string item, int array[][50],string items[])
 {
 	string folder = "folder";
@@ -351,20 +332,21 @@ void takeprolouge(string item, int array[][50],string items[])
 	if (item.length() < 5)
 	{
 
-		cout << "can't take that" << endl;
+		cout << "Can't take that." << endl;
 	}
 	else if (item.compare(5, folder.length(), "folder") == 0 || item.compare(5, folder.length(), "folder") == 0 && array[4][0] == 0)
 	{
 		array[4][0] = 1;
 		array[5][3] = 1;
 		items[2] = "folder";
-		cout << "I took the folder i will look at it later" << endl;
+		cout << "I took the folder. I will look at it later." << endl;
 	}
 	else
 	{
-		cout << "can't take that" << endl;
+		cout << "Can't take that." << endl;
 	}
 }
+
 void itemsprolouge(string item, int array[][50],string items[])
 {
 	//int itemnumber = sizeof(items) / sizeof(string);
@@ -380,10 +362,11 @@ void itemsprolouge(string item, int array[][50],string items[])
 		array[0][0] = 4;
 	}
 }
+
 void useprolouge()
 {
 	// give micheal the photo
-	cout << "nothing to use" << endl;
+	cout << "Nothing to use." << endl;
 }
 
 //void searchRoom(string selected, int array[][50], string items[])

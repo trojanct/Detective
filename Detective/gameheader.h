@@ -7,7 +7,6 @@ using namespace std;
 int checkchoice(string choice);
 void notes(string item, int array[][50]);
 
-
 void chapter3();
 void aprtmenu(string choice, int array[][50], string items[]);
 int aprtcheckchoice(string choice);
@@ -47,5 +46,3 @@ void checkh(string item, int array[][50]);
 void takeh(string item, int array[][50], string items[]);
 void itemh(string item, int array[][50], string items[]);
 void talkh(string item, int array[][50]);
-
-
