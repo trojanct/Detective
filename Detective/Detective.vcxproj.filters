@@ -18,9 +18,6 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="wierdapartment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pro1.txt">
@@ -50,31 +47,44 @@
     <Text Include="pro5.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="aptable.txt">
+    <Text Include="houseBegin.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="apcouch.txt">
+    <Text Include="houseStudyBookshelf.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="apbed.txt">
+    <Text Include="HouseStudyBookshelfBook.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="aptgame.txt">
+    <Text Include="houseStudyDesk.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="aptsmalldoor.txt">
+    <Text Include="houseStudy.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="apdvd.txt">
+    <Text Include="houseKitchen.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="aprt.txt">
+    <Text Include="houseKitchenMail.txt">
       <Filter>Source Files</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="gameheader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Text Include="houseKitchenTrash.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="houseVictimBedroom.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="houseVictimsBedroomBox.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="houseVictimsBedroomNightstand.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="houseBrothersBedroom.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="houseBrothersBedroomBoxes.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

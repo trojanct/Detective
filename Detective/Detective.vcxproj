@@ -124,16 +124,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="apbed.txt" />
-    <Text Include="apcouch.txt" />
-    <Text Include="apdvd.txt" />
-    <Text Include="aprt.txt" />
-    <Text Include="aptable.txt" />
-    <Text Include="aptgame.txt" />
-    <Text Include="aptsmalldoor.txt" />
+    <Text Include="houseBegin.txt" />
+    <Text Include="houseBrothersBedroom.txt" />
+    <Text Include="houseBrothersBedroomBoxes.txt" />
+    <Text Include="houseKitchen.txt" />
+    <Text Include="houseKitchenMail.txt" />
+    <Text Include="houseKitchenTrash.txt" />
+    <Text Include="houseStudy.txt" />
+    <Text Include="houseStudyBookshelf.txt" />
+    <Text Include="HouseStudyBookshelfBook.txt" />
+    <Text Include="houseStudyDesk.txt" />
+    <Text Include="houseVictimBedroom.txt" />
+    <Text Include="houseVictimsBedroomBox.txt" />
+    <Text Include="houseVictimsBedroomNightstand.txt" />
     <Text Include="pro1.txt" />
     <Text Include="pro2.txt" />
     <Text Include="harr.txt" />
@@ -143,9 +148,6 @@
     <Text Include="notes.txt" />
     <Text Include="pro4.txt" />
     <Text Include="pro5.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="gameheader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

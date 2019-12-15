@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "gameheader.h"
 
 using namespace std;
 
@@ -122,23 +121,107 @@ void prolouge()
 
 
 }
+
+void house()
+{
+	ifstream file;
+	int housearray[6][50] = { {0} };
+	string house = "house";
+	string text, choice;
+
+	housearray[5][0] = 1;
+	housearray[5][1] = 1;
+	string proitems[3] = { "badge", "picture" };
+
+	house += "Begin.txt";
+	//cout << pro << endl;
+	file.open(house.c_str());
+	getline(file, text);
+	cout << text << endl;
+	text.clear();
+	file.close();
+
+	while (housearray[0][0] != 1)
+	{
+		getline(cin, choice);
+		menu(choice, housearray, proitems);
+	}
+
+	//house.erase(3, 5);
+	//house += "2.txt";
+	//file.open(house.c_str());
+	//getline(file, text);
+	//cout << text << endl;
+	//text.clear();
+	//file.close();
+
+
+	//while (housearray[0][0] != 2)
+	//{
+	//	getline(cin, choice);
+	//	menu(choice, housearray, proitems);
+	//}
+
+	//house.erase(3, 5);
+	//house += "3.txt";
+	//file.open(house.c_str());
+	//getline(file, text);
+	//cout << text << endl;
+	//text.clear();
+	//file.close();
+
+	//while (housearray[0][0] != 3)
+	//{
+	//	getline(cin, choice);
+	//	menu(choice, housearray, proitems);
+	//	if (housearray[4][0] == 1 && housearray[3][0] == 1 && housearray[3][1] == 1)
+	//	{
+	//		housearray[0][0] = 3;
+	//	}
+	//}
+
+	//house.erase(3, 5);
+	//house += "4.txt";
+	//file.open(house.c_str());
+	//getline(file, text);
+	//cout << text << endl;
+	//text.clear();
+	//file.close();
+
+	//while (housearray[0][0] != 4)
+	//{
+	//	getline(cin, choice);
+	//	menu(choice, housearray, proitems);
+
+	//}
+
+	//house.erase(3, 5);
+	//house += "5.txt";
+	//file.open(house.c_str());
+	//getline(file, text);
+	//cout << text << endl;
+	//text.clear();
+	//file.close();
+
+
+	//cout << string(10, '\n');
+	////needs to be fixed because of a security flaw but using it for time being
+	////system("CLS");
+	//house.erase(3, 5);
+	//cout << "End of prolouge" << endl;
+
+	//clearscreen();
+}
+
 void clearscreen()
 {
-
 	cout << string(50, '\n');
-
-
 }
 
 int main()
 {
-	
-	prolouge();
-	chapter3();
-	
-
-
-
+	//prolouge();
+	house();
 
 }
 void menu(string choice, int array[][50], string items[])
@@ -169,17 +252,15 @@ void menu(string choice, int array[][50], string items[])
 	case 7:
 		useprolouge;
 		break;
+	case 8:
+		searchRoom(choice, array, items);
 	default:
 		break;
 	}
-
-
-
 }
+
 int checkchoice(string choice)
 {
-	
-
 	if (choice.compare(0, 4, "show") == 0 || choice.compare(0, 4, "Show") == 0)
 	{
 		return 1;
@@ -208,13 +289,15 @@ int checkchoice(string choice)
 	{
 		return 7;
 	}
+	if (choice.compare(0, 6, "search") == 0 || choice.compare(0, 6, "Search") == 0)
+	{
+		return 8;
+	}
 	else
 	{
 		cout << "I should not do that right now" << endl;
 		return 0;
 	}
-	
-
 }
 void showprolouge(string item, int array[][50])
 {
@@ -222,22 +305,17 @@ void showprolouge(string item, int array[][50])
 
 	if(item.length() < 5)
 	{
-		
 		cout << "I don't have that item" << endl;
 	}
 	else if(item.compare(5, badge.length(), "badge") == 0 || item.compare(5, badge.length(), "Badge") == 0 && array[0][0] == 0)
 	{
 		array[0][0] = 1;
 		cout << "I showed my badge to the officer" << endl;
-
 	}
 	else
 	{
-		cout << "I don't have that item" << endl;
-
+		cout << "I don't have that itme" << endl;
 	}
-
-
 }
 void talkprolouge(string item, int array[][50])
 {
@@ -247,6 +325,7 @@ void talkprolouge(string item, int array[][50])
 	
 	if (item.length() < 5)
 	{
+
 		cout << "I can't talk to no one" << endl;
 	}
 	else if (item.compare(5, Harrison.length(), "harrison") == 0 || item.compare(5, Harrison.length(), "Harrison") == 0 && array[0][1] == 0)
@@ -262,7 +341,6 @@ void talkprolouge(string item, int array[][50])
 	else
 	{
 		cout << "they are not here" << endl;
-
 	}
 
 }
@@ -299,10 +377,9 @@ void checkprolouge(string item, int array[][50])
 	else
 	{
 		cout << "can't check that" << endl;
-
 	}
-
 }
+
 void notesprolouge(string item, int array[][50])
 {
 	ifstream file;
@@ -312,9 +389,9 @@ void notesprolouge(string item, int array[][50])
 	getline(file, text);
 	cout << text << endl;
 	file.close();
-
-
 }
+
+
 void takeprolouge(string item, int array[][50],string items[])
 {
 	string folder = "folder";
@@ -332,15 +409,13 @@ void takeprolouge(string item, int array[][50],string items[])
 		array[5][3] = 1;
 		items[2] = "folder";
 		cout << "I took the folder i will look at it later" << endl;
-
 	}
 	else
 	{
 		cout << "can't take that" << endl;
-
 	}
-
 }
+
 void itemsprolouge(string item, int array[][50],string items[])
 {
 	//int itemnumber = sizeof(items) / sizeof(string);
@@ -355,13 +430,121 @@ void itemsprolouge(string item, int array[][50],string items[])
 	{
 		array[0][0] = 4;
 	}
-
-	
-	
-
 }
+
 void useprolouge()
 {
 	// give micheal the photo
 	cout << "nothing to use" << endl;
+}
+
+void searchRoom(string selected, int array[][50], string items[])
+{
+	string study = "study";
+	string kitchen = "kitchen";
+	string spareRoom = "spare-bedroom";
+	string bedroom = "victims-bedroom";
+	ifstream file;
+	string text;
+	int lastIndex = items->length + 1;
+
+	if (selected.length() < 5)
+	{
+		cout << "can't take that" << endl;
+	}
+	else if (selected.compare(5, study.length(), "study") == 0 || selected.compare(5, study.length(), "study") == 0/* && array[4][0] == 0*/)
+	{
+		//array[4][0] = 1;
+		//array[5][3] = 1;
+		//items[lastIndex] = "study";
+		cout << "I go to the study to see if I can find anything" << endl;
+		searchStudy();
+	}
+	else if (selected.compare(7, study.length(), "kitchen") == 0 || selected.compare(7, study.length(), "study") == 0/* && array[4][0] == 0*/)
+	{
+		//array[4][0] = 1;
+		//array[5][3] = 1;
+		//items[lastIndex] = "study";
+		cout << "I go to the kitchen to see if I can find anything" << endl;
+		searchKitchen();
+	}
+	else if (selected.compare(16, study.length(), "brothers-bedroom") == 0 || selected.compare(16, study.length(), "study") == 0/* && array[4][0] == 0*/)
+	{
+		//array[4][0] = 1;
+		//array[5][3] = 1;
+		//items[lastIndex] = "study";
+		cout << "I go to the brothers bedroom to see if I can find anything" << endl;
+		searchBrothersBedroom();
+	}
+	else if (selected.compare(15, study.length(), "victims-bedroom") == 0 || selected.compare(15, study.length(), "study") == 0/* && array[4][0] == 0*/)
+	{
+		//array[4][0] = 1;
+		//array[5][3] = 1;
+		//items[lastIndex] = "study";
+		cout << "I go to the victims bedroom to see if I can find anything" << endl;
+		searchVictimsBedroom();
+	}
+	else
+	{
+		cout << "No need to search that room." << endl;
+	}
+}
+
+void searchStudy()
+{
+	//searchBookshelf();
+	//searchDesk();
+}
+
+void searchKitchen()
+{
+	//searchMail();
+	//searchTrash();
+}
+
+void searchBrothersBedroom()
+{
+	//searchBoxes();
+}
+
+void searchVictimsBedroom()
+{
+	//searchBox();
+	//searchNightstand();
+}
+
+
+void searchBookshelf()
+{
+
+}
+
+void searchDesk()
+{
+
+}
+
+void searchMail()
+{
+	//searchTrash();
+}
+
+void searchTrash()
+{
+
+}
+
+void searchBoxes()
+{
+
+}
+
+void searchBox()
+{
+
+}
+
+void searchNightStand()
+{
+
 }
