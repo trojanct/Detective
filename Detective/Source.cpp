@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "gameheader.h"
+
 using namespace std;
 
 void clearscreen();
@@ -130,9 +132,9 @@ void clearscreen()
 
 int main()
 {
-
+	
 	prolouge();
-
+	chapter3();
 	
 
 

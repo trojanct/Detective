@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="pro1.txt" />
@@ -135,6 +136,9 @@
     <Text Include="notes.txt" />
     <Text Include="pro4.txt" />
     <Text Include="pro5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameheader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
