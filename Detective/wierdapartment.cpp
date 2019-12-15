@@ -44,9 +44,8 @@ void chapter3()
 	}
 
 
+	cout << "End of chapter 3" << endl << endl << endl;
 
-
-	
 }
 void aprtmenu(string choice, int array[][50], string items[])
 {

@@ -6,7 +6,7 @@
 using namespace std;
 
 void clearscreen();
-int checkchoice(string choice);
+
 void menu(string choice, int array[][50],string items[]);
 void showprolouge(string item, int array[][50]);
 void talkprolouge(string item, int array[][50]);
@@ -233,8 +233,9 @@ void clearscreen()
 
 int main()
 {
-	//prolouge();
+	prolouge();
 	//house();
+	chapter2();
 	chapter3();
 
 }

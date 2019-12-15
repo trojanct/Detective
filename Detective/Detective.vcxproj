@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="apartment.cpp" />
+    <ClCompile Include="outside.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
@@ -153,6 +154,13 @@
     <Text Include="houseVictimBedroom.txt" />
     <Text Include="houseVictimsBedroomBox.txt" />
     <Text Include="houseVictimsBedroomNightstand.txt" />
+    <Text Include="out1.txt" />
+    <Text Include="out2.txt" />
+    <Text Include="outam.txt" />
+    <Text Include="outew.txt" />
+    <Text Include="outhmlss.txt" />
+    <Text Include="outnm.txt" />
+    <Text Include="outpap.txt" />
     <Text Include="pro1.txt" />
     <Text Include="pro2.txt" />
     <Text Include="harr.txt" />
