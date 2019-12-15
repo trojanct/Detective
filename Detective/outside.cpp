@@ -71,7 +71,7 @@ void outmenu(string choice, int array[][50], string items[])
 		useout(choice, array, items);
 		break;
 	case 8:
-		cout << "nothing to search" << endl;
+		cout << "no time to search" << endl;
 
 	default:
 		break;

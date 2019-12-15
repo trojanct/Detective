@@ -30,6 +30,9 @@
     <ClCompile Include="policestation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="housesearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pro1.txt">

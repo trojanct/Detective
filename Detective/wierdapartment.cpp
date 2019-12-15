@@ -15,7 +15,8 @@ void chapter3()
 	apartarray[5][17] = 1;
 	apartarray[5][18] = 1;
 	apartarray[5][19] = 1;
-	string items[20] = { "badge", "picture","folder","key" };
+	apartarray[5][15] = 1;
+	string items[20] = { "badge", "picture","folder","key","trophy" };
 
 	file.open("aprt.txt");
 	getline(file, text);
@@ -332,7 +333,7 @@ void takeaprt(string item, int array[][50], string items[])
 		{
 			cout << "I took some of the batteries." << endl;
 			array[5][0] = 1;
-			items[4] = batteries;
+			items[10] = batteries;
 		}
 		else
 		{
