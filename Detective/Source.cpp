@@ -233,10 +233,11 @@ void clearscreen()
 
 int main()
 {
-	prolouge();
+	//prolouge();
 	//house();
-	chapter2();
-	chapter3();
+	//chapter2();
+	//chapter3();
+	chapter4();
 
 }
 void menu(string choice, int array[][50], string items[])

@@ -27,6 +27,9 @@
     <ClCompile Include="outside.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="policestation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pro1.txt">
@@ -146,9 +149,31 @@
     <Text Include="outhmlss.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="outew.txt" />
-    <Text Include="outam.txt" />
     <Text Include="out2.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="outam.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="outew.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="psmichael.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="pslouie.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="ps1.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="choseMichael.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="choseLouie.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="evidence.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

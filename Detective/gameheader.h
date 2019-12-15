@@ -30,5 +30,13 @@ void checkout(string item, int array[][50], string items[]);
 void itemout(string item, int array[][50], string items[]);
 void useout(string item, int array[][50], string items[]);
 
+//police station
+void chapter4();
+void finaltalk(string item, int array[][50]);
+int pscheckchoice(string choice);
+void psmenu(string choice, int array[][50], string items[]);
+void evidence(string item);
+void choose(string item);
+
 
 

@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="apartment.cpp" />
     <ClCompile Include="outside.cpp" />
+    <ClCompile Include="policestation.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="wierdapartment.cpp" />
   </ItemGroup>
@@ -141,6 +142,9 @@
     <Text Include="aptowel.txt" />
     <Text Include="aptsmalldoor.txt" />
     <Text Include="apwaste.txt" />
+    <Text Include="choseLouie.txt" />
+    <Text Include="choseMichael.txt" />
+    <Text Include="evidence.txt" />
     <Text Include="houseBegin.txt" />
     <Text Include="houseBrothersBedroom.txt" />
     <Text Include="houseBrothersBedroomBoxes.txt" />
@@ -166,6 +170,9 @@
     <Text Include="harr.txt" />
     <Text Include="pro3.txt" />
     <Text Include="body.txt" />
+    <Text Include="ps1.txt" />
+    <Text Include="pslouie.txt" />
+    <Text Include="psmichael.txt" />
     <Text Include="sim.txt" />
     <Text Include="table.txt" />
     <Text Include="notes.txt" />
