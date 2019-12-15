@@ -18,6 +18,12 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="apartment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wierdapartment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pro1.txt">
@@ -86,5 +92,31 @@
     <Text Include="houseBrothersBedroomBoxes.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="apbed.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="apcouch.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="apdvd.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="aprt.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="aptable.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="aptgame.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="aptsmalldoor.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameheader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

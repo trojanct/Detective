@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "gameheader.h"
 
 using namespace std;
 
@@ -13,7 +14,19 @@ void checkprolouge(string item, int array[][50]);
 void takeprolouge(string item, int array[][50],string items[]);
 void notesprolouge(string item, int array[][50]);
 void itemsprolouge(string item, int array[][50], string items[]);
+void searchRoom(string selected, int array[][50], string items[]);
 void useprolouge();
+void searchStudy();
+void searchKitchen();
+void searchBrothersBedroom();
+void searchVictimsBedroom();
+void searchBookshelf();
+void searchDesk();
+void searchMail();
+void searchTrash();
+void searchBoxes();
+void searchBox();
+void searchNightStand();
 
 const int m = 50;
 
@@ -254,6 +267,7 @@ void menu(string choice, int array[][50], string items[])
 		break;
 	case 8:
 		searchRoom(choice, array, items);
+		break;
 	default:
 		break;
 	}
@@ -446,7 +460,7 @@ void searchRoom(string selected, int array[][50], string items[])
 	string bedroom = "victims-bedroom";
 	ifstream file;
 	string text;
-	int lastIndex = items->length + 1;
+	//int lastIndex = items->length + 1;
 
 	if (selected.length() < 5)
 	{
