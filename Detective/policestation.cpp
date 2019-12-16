@@ -18,6 +18,7 @@ void chapter4()
 	cout << text << endl;
 	text.clear();
 	file.close();
+
 	while (psarray[0][0] != 1)
 	{
 		cout << "Talk Michael" << endl;
@@ -28,22 +29,15 @@ void chapter4()
 		psmenu(choice, psarray, items);
 
 	}
-
-
-	
-
-
-	cout << "End of chapter 4" << endl << endl << endl;
-
+	cout << "End of chapter 4." << endl << endl << endl;
 }
+
 void psmenu(string choice, int array[][50], string items[])
 {
-
 	int n = pscheckchoice(choice);
 
 	switch (n)
 	{
-	
 	case 1:
 		finaltalk(choice, array);
 		break;
@@ -57,14 +51,10 @@ void psmenu(string choice, int array[][50], string items[])
 	default:
 		break;
 	}
-
-
-
 }
+
 int pscheckchoice(string choice)
 {
-
-
 	if (choice.compare(0, 4, "talk") == 0 || choice.compare(0, 4, "Talk") == 0)
 	{
 		return 1;
@@ -82,9 +72,8 @@ int pscheckchoice(string choice)
 		cout << "I should not do that right now" << endl;
 		return 0;
 	}
-
-
 }
+
 void finaltalk(string item ,int array[][50])
 {
 	ifstream file;
@@ -92,10 +81,9 @@ void finaltalk(string item ,int array[][50])
 	string mike = "michael";
 	string lou = "Louie";
 
-
 	if (item.length() < 5)
 	{
-		cout << "that is not an option" << endl;
+		cout << "That is not an option." << endl;
 	}
 	else if (item.compare(5, mike.length(), "michael") == 0 || item.compare(5, mike.length(), "Michael") == 0)
 	{
@@ -110,13 +98,11 @@ void finaltalk(string item ,int array[][50])
 		}
 		else
 		{
-			cout << "i already talked to him" << endl;
+			cout << "I already talked to him." << endl;
 		}
-
 	}
 	else if (item.compare(5, lou.length(), "louie") == 0 || item.compare(5, lou.length(), "Louie") == 0)
 	{
-
 		if (array[2][1] == 0)
 		{
 			file.open("pslouie.txt");
@@ -127,17 +113,15 @@ void finaltalk(string item ,int array[][50])
 		}
 		else
 		{
-			cout << "i already talked to him" << endl;
+			cout << "I already talked to him." << endl;
 		}
-
 	}
 	else
 	{
-		cout << "that is not an option" << endl;
-
+		cout << "That is not an option." << endl;
 	}
-
 }
+
 void evidence(string item)
 {
 	ifstream file;
@@ -150,6 +134,7 @@ void evidence(string item)
 	}
 	file.close();
 }
+
 void choose(string item)
 {
 	ifstream file;
@@ -157,33 +142,27 @@ void choose(string item)
 	string mike = "michael";
 	string lou = "Louie";
 
-
 	if (item.length() < 7)
 	{
-		cout << "that is not an option" << endl;
+		cout << "That is not an option." << endl;
 	}
 	else if (item.compare(7, mike.length(), "michael") == 0 || item.compare(7, mike.length(), "Michael") == 0)
 	{
-
-			file.open("choseMichael.txt");
-			getline(file, text);
-			cout << text << endl;
-			file.close();
-			
+		file.open("choseMichael.txt");
+		getline(file, text);
+		cout << text << endl;
+		file.close();	
 	}
 	else if (item.compare(7, lou.length(), "louie") == 0 || item.compare(7, lou.length(), "Louie") == 0)
 	{
-
-		
-			file.open("choseLouie.txt");
-			getline(file, text);
-			cout << text << endl;
-			file.close();
-	
+		file.open("choseLouie.txt");
+		getline(file, text);
+		cout << text << endl;
+		file.close();
 	}
 	else
 	{
-		cout << "that is not an option" << endl;
+		cout << "That is not an option." << endl;
 
 	}
 }
