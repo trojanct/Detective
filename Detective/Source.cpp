@@ -299,7 +299,7 @@ void takeprolouge(string item, int array[][50],string items[])
 
 		cout << "Can't take that." << endl;
 	}
-	else if ((item.compare(5, folder.length(), "folder") == 0 || item.compare(5, folder.length(), "Folder") == 0) && array[4][0] == 0)
+	else if ((item.compare(5, folder.length(), "folder") == 0 || item.compare(5, folder.length(), "Folder") == 0) && (array[4][0] == 0) && (array[3][1] == 1))
 	{
 		array[4][0] = 1;
 		array[5][3] = 1;
