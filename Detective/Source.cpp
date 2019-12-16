@@ -4,28 +4,15 @@
 #include "gameheader.h"
 
 using namespace std;
-
-void clearscreen();
-
-void menu(string choice, int array[][50],string items[]);
-void showprolouge(string item, int array[][50]);
-void talkprolouge(string item, int array[][50]);
-void checkprolouge(string item, int array[][50]);
-void takeprolouge(string item, int array[][50],string items[]);
-void itemsprolouge(string item, int array[][50], string items[]);
-//void searchRoom(string selected, int array[][50], string items[]);
-void useprolouge();
-//void searchStudy();
-//void searchKitchen();
-//void searchBrothersBedroom();
-//void searchVictimsBedroom();
-//void searchBookshelf();
-//void searchDesk();
-//void searchMail();
-//void searchTrash();
-//void searchBoxes();
-//void searchBox();
-//void searchNightStand();
+//////////////////////////////////////////////////////////////////////////////////////////
+//Title: Detective Raad Text adventure                                                  //
+//Team members:Cody,Mariz, Joseph, Darian                                               //
+//Repo: Github                                                                          //
+//Cody:Trojanct    Joseph:JoeWieneke    Mariz:Magi12    Darian:darianpert97             //    
+//Summary:                                                                              //
+//This game is a text-based adventure game staring main character Detective Raad.       //
+//Talk, Check, Search and more through three chapters.                                  //
+//////////////////////////////////////////////////////////////////////////////////////////
 
 const int m = 50;
 
@@ -108,53 +95,31 @@ void prolouge()
 	text.clear();
 	file.close();
 	
-	cout << string(10, '\n');
 	//needs to be fixed because of a security flaw but using it for time being
 	//system("CLS");
 	pro.erase(3,5);
-	cout << "End of prolouge." << endl;
+	cout << "End of prolouge." << endl << endl << endl;
 }
 
-//void house()
-//{
-//	ifstream file;
-//	int housearray[6][50] = { {0} };
-//	string house = "house";
-//	string text, choice;
-//
-//	housearray[5][0] = 1;
-//	housearray[5][1] = 1;
-//	string proitems[3] = { "badge", "picture" };
-//
-//	house += "Begin.txt";
-//	//cout << pro << endl;
-//	file.open(house.c_str());
-//	getline(file, text);
-//	cout << text << endl;
-//	text.clear();
-//	file.close();
-//
-//	while (housearray[0][0] != 1)
-//	{
-//		getline(cin, choice);
-//		menu(choice, housearray, proitems);
-//	}
-//
-//	
-//}
+
 
 void clearscreen()
 {
+	//relic of trying to get the screen to wipe
+	//left here for further implementation.
 	cout << string(50, '\n');
 }
 
 int main()
 {
+	//The start of the program
 	prolouge();
 	chapter1();
 	chapter2();
 	chapter3();
 	chapter4();
+
+	cout <<" THE END "<< endl;
 }
 
 void menu(string choice, int array[][50], string items[])
@@ -288,7 +253,7 @@ void checkprolouge(string item, int array[][50])
 	{
 		cout << "Can't check that." << endl;
 	}
-	else if (item.compare(6, Body.length(), "body") == 0 || item.compare(6, Body.length(), "Body") == 0 && array[3][0] == 0)
+	else if ((item.compare(6, Body.length(), "body") == 0 || item.compare(6, Body.length(), "Body") == 0) && array[3][0] == 0)
 	{
 		array[3][0] = 1;
 		file.open("body.txt");
@@ -334,7 +299,7 @@ void takeprolouge(string item, int array[][50],string items[])
 
 		cout << "Can't take that." << endl;
 	}
-	else if (item.compare(5, folder.length(), "folder") == 0 || item.compare(5, folder.length(), "folder") == 0 && array[4][0] == 0)
+	else if ((item.compare(5, folder.length(), "folder") == 0 || item.compare(5, folder.length(), "Folder") == 0) && array[4][0] == 0)
 	{
 		array[4][0] = 1;
 		array[5][3] = 1;
@@ -369,113 +334,3 @@ void useprolouge()
 	cout << "Nothing to use." << endl;
 }
 
-//void searchRoom(string selected, int array[][50], string items[])
-//{
-//	string study = "study";
-//	string kitchen = "kitchen";
-//	string spareRoom = "spare-bedroom";
-//	string bedroom = "victims-bedroom";
-//	ifstream file;
-//	string text;
-//	//int lastIndex = items->length + 1;
-//
-//	if (selected.length() < 5)
-//	{
-//		cout << "can't take that" << endl;
-//	}
-//	else if (selected.compare(5, study.length(), "study") == 0 || selected.compare(5, study.length(), "study") == 0/* && array[4][0] == 0*/)
-//	{
-//		//array[4][0] = 1;
-//		//array[5][3] = 1;
-//		//items[lastIndex] = "study";
-//		cout << "I go to the study to see if I can find anything" << endl;
-//		searchStudy();
-//	}
-//	else if (selected.compare(7, study.length(), "kitchen") == 0 || selected.compare(7, study.length(), "study") == 0/* && array[4][0] == 0*/)
-//	{
-//		//array[4][0] = 1;
-//		//array[5][3] = 1;
-//		//items[lastIndex] = "study";
-//		cout << "I go to the kitchen to see if I can find anything" << endl;
-//		searchKitchen();
-//	}
-//	else if (selected.compare(16, study.length(), "brothers-bedroom") == 0 || selected.compare(16, study.length(), "study") == 0/* && array[4][0] == 0*/)
-//	{
-//		//array[4][0] = 1;
-//		//array[5][3] = 1;
-//		//items[lastIndex] = "study";
-//		cout << "I go to the brothers bedroom to see if I can find anything" << endl;
-//		searchBrothersBedroom();
-//	}
-//	else if (selected.compare(15, study.length(), "victims-bedroom") == 0 || selected.compare(15, study.length(), "study") == 0/* && array[4][0] == 0*/)
-//	{
-//		//array[4][0] = 1;
-//		//array[5][3] = 1;
-//		//items[lastIndex] = "study";
-//		cout << "I go to the victims bedroom to see if I can find anything" << endl;
-//		searchVictimsBedroom();
-//	}
-//	else
-//	{
-//		cout << "No need to search that room." << endl;
-//	}
-//}
-//
-//void searchStudy()
-//{
-//	//searchBookshelf();
-//	//searchDesk();
-//}
-//
-//void searchKitchen()
-//{
-//	//searchMail();
-//	//searchTrash();
-//}
-//
-//void searchBrothersBedroom()
-//{
-//	//searchBoxes();
-//}
-//
-//void searchVictimsBedroom()
-//{
-//	//searchBox();
-//	//searchNightstand();
-//}
-//
-//
-//void searchBookshelf()
-//{
-//
-//}
-//
-//void searchDesk()
-//{
-//
-//}
-//
-//void searchMail()
-//{
-//	//searchTrash();
-//}
-//
-//void searchTrash()
-//{
-//
-//}
-//
-//void searchBoxes()
-//{
-//
-//}
-//
-//void searchBox()
-//{
-//
-//}
-//
-//void searchNightStand()
-//{
-//
-//}

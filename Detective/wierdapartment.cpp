@@ -1,4 +1,5 @@
 #include "gameheader.h"
+//parts of the array that are being tracked
 // 0 story
 // 1 used
 // 2 talked too
@@ -8,27 +9,34 @@
 void chapter3()
 {
 	ifstream file;
+	//array used to keep track of certain events
 	int apartarray[6][50]= { {0} };
 	string text, choice;
 
+	//initiating already gotten items 
 	apartarray[5][16] = 1;
 	apartarray[5][17] = 1;
 	apartarray[5][18] = 1;
 	apartarray[5][19] = 1;
 	apartarray[5][15] = 1;
+	//putting known items into array
 	string items[20] = { "badge", "picture","folder","key","trophy" };
 
+	
+	//opening file to use as intro
+	//used txt files due to large amount of text
 	file.open("aprt.txt");
 	getline(file, text);
 	cout << text << endl;
 	text.clear();
 	file.close();
+	//while loop waitng for [0][0] which 0 contains story elements
 	while (apartarray[0][0] != 1)
 	{
 		getline(cin, choice);
 		aprtmenu(choice, apartarray, items);
 	}
-	
+	//opens next story bit description
 	file.open("apbathroom.txt");
 	getline(file, text);
 	cout << text << endl;
@@ -40,14 +48,16 @@ void chapter3()
 		getline(cin, choice);
 		aprtmenu(choice, apartarray, items);
 	}
-
+	//tells end of chapter
 	cout << "End of chapter 3." << endl << endl << endl;
 }
 
 void aprtmenu(string choice, int array[][50], string items[])
 {
+	//checks to see if the players original action is valid
 	int n = aprtcheckchoice(choice);
 
+	//switch to use for multiple choices
 	switch (n)
 	{
 	case 1:
@@ -73,11 +83,13 @@ void aprtmenu(string choice, int array[][50], string items[])
 		break;
 	default:
 		break;
+		//show was not an option when coding for this section was done
 	}
 }
 
 int aprtcheckchoice(string choice)
 {
+	//checking to make sure what the player typed is valid
 	if (choice.compare(0, 4, "show") == 0 || choice.compare(0, 4, "Show") == 0)
 	{
 		return 1;
@@ -132,6 +144,7 @@ void talkaprt(string item, int array[][50])
 
 void checkaprt(string item, int array[][50],string items[])
 {
+	//initialized strings that are also here for a reminder what is in this section of story
 	string stand = "stand";
 	string table = "table";
 	string bed = "bed";
@@ -146,7 +159,8 @@ void checkaprt(string item, int array[][50],string items[])
 
 	ifstream file;
 	string text;
-
+	//check to see if the place can be checked or it isn'ta valid item
+	//checks to see if more that just the choice was put it
 	if (item.length() < 6)
 	{
 		cout << "Can't check that." << endl;
@@ -157,15 +171,19 @@ void checkaprt(string item, int array[][50],string items[])
 	}
 	else if (item.compare(6, table.length(), "table") == 0 || item.compare(6, table.length(), "Table") == 0)
 	{
+		//opens appropriate text file and runs the text then closes the fle
 		file.open("aptable.txt");
 		getline(file, text);
 		cout << text << endl;
 		file.close();
+		//makes sure that if something was taken from the scene is not there anymore
 		if (array[3][0] == 0)
 		{
 			cout << "This is interesting. I swipe one of the magazines with Claire’s name and the other address." << endl;
+			//puts new item into items array and can now be checked with items
 			items[8] = "magazine";
 		}
+		//showing that this area has been checked
 		array[3][0] = 1;
 	}
 	else if (item.compare(6, stand.length(), "stand") == 0 || item.compare(6, stand.length(), "Stand") == 0)
@@ -242,6 +260,7 @@ void checkaprt(string item, int array[][50],string items[])
 			cout << "There is also a remote. No batteries though." << endl;
 		}
 	}
+	//this also checks to see if the right part of the story has been reached yet before continuing
 	else if ((item.compare(6, towel.length(), "towel") == 0 || item.compare(6, towel.length(), "Towel") == 0) && array[0][0] == 1)
 	{
 		file.open("aptowel.txt");
@@ -277,7 +296,7 @@ void notesaprt(string item, int array[][50])
 
 void takeaprt(string item, int array[][50], string items[])
 {
-	//5 is items up to 3 taken
+	//initialized items to be used in checking and for reference that they are valid
 	ifstream file;
 	string text;
 	string remote = "remote";
@@ -286,16 +305,19 @@ void takeaprt(string item, int array[][50], string items[])
 	string bath = "bathkey";
 	string money = "money";
 
+	//checks to see if they put more than the choice
 	if (item.length() < 5)
 	{
 		cout << "Can't take that." << endl;
 	}
+	// checks to see if the choice item is valid but also checks to see if the item has been found first before it can be interacted with
 	else if ((item.compare(5, batteries.length(), "batteries") == 0 || item.compare(5, batteries.length(), "Batteries") == 0) && array[3][2] == 1)
 	{
 		if (array[5][0] == 0)
 		{
 			cout << "I took some of the batteries." << endl;
 			array[5][0] = 1;
+			//added to items
 			items[10] = batteries;
 		}
 		else
@@ -309,7 +331,7 @@ void takeaprt(string item, int array[][50], string items[])
 		{
 			cout << "I got the remote from the innards of the couch. It needs some batteries to \"use\" on it" << endl;
 			array[5][1] = 1;
-			items[5] = remote;
+			items[5] = "remote";
 		}
 		else
 		{
@@ -329,7 +351,7 @@ void takeaprt(string item, int array[][50], string items[])
 			cout << "I already have that key." << endl;
 		}
 	}
-	else if((item.compare(5, sim.length(), "sim card") == 0 || item.compare(5, sim.length(), "Sim card") == 0) && array[3][3] == 1)
+	else if((item.compare(5, sim.length(), "sim card") == 0 || item.compare(5, sim.length(), "Sim card") == 0) && array[3][2] == 1)
 	{
 		if (array[5][2] == 0)
 		{
@@ -355,28 +377,34 @@ void takeaprt(string item, int array[][50], string items[])
 
 void itemaprt(string item, int array[][50], string items[])
 {
-	for (int i = 0; i < sizeof(items); i++)
-	{
-		cout << items[i] << endl;
+	//making sure only the valid items are  shown
+	for (int i = 0; i < 20; i++)
+	{	
+		if (items[i] != "")
+		{
+			cout << items[i] << endl;
+		}
 	}
 }
 
 void useaprt(string item, int array[][50], string items[])
 {
+	//initializes items for check and also reference that they are here
 	ifstream file;
 	string text;
 	string remote = "remote";
 	string batteries = "batteries";
 	string sim = "sim card";
 	string bath = "bathkey";
-
+	//checking to see if they put more than the choice
 	if (item.length() < 4)
 	{
 		cout << "Can't use that." << endl;
 	}
+	//checks to see if choice is valid but also to see if that item can be used yet
 	else if (item.compare(4, batteries.length(), "batteries") == 0 || item.compare(4, batteries.length(), "Batteries") == 0 && array[5][0] == 1)
 	{
-		if (array[5][0] == 1 && array[1][0] == 0)
+		if (array[5][0] == 1 && array[1][0] == 0 && array[5][1] == 1)
 		{
 			cout << "I put the batteries into the remote. I could \"use\" this remote now that it has power." << endl;
 			array[1][0] = 1;

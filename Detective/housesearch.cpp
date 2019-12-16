@@ -103,7 +103,7 @@ void searchh(string item, int array[][50])
 		file.close();
 		array[1][1] = 1;
 	}
-	else if (item.compare(7, brothers.length(), "brothers-bedroom") == 0 || item.compare(7, brothers.length(), "brothers-bedroom") == 0)
+	else if (item.compare(7, brothers.length(), "brothers-bedroom") == 0 || item.compare(7, brothers.length(), "Brothers-bedroom") == 0)
 	{
 		file.open("houseBrothersBedroom.txt");
 		getline(file, text);
@@ -111,7 +111,7 @@ void searchh(string item, int array[][50])
 		file.close();
 		array[1][2] = 1;
 	}
-	else if (item.compare(7, bedroom.length(), "master-bedroom") == 0 || item.compare(7, bedroom.length(), "master-bedroom") == 0)
+	else if (item.compare(7, bedroom.length(), "master-bedroom") == 0 || item.compare(7, bedroom.length(), "Master-bedroom") == 0)
 	{
 		file.open("houseVictimBedroom.txt");
 		getline(file, text);
@@ -119,7 +119,7 @@ void searchh(string item, int array[][50])
 		file.close();
 		array[1][3] = 1;
 	}
-	else if ((item.compare(7, boxes.length(), "boxes") == 0 || item.compare(7, boxes.length(), "boxes") == 0) && array[1][2] == 1)
+	else if ((item.compare(7, boxes.length(), "boxes") == 0 || item.compare(7, boxes.length(), "Boxes") == 0) && array[1][2] == 1)
 	{
 		file.open("houseBrothersBedroomBoxes.txt");
 		getline(file, text);
@@ -229,18 +229,20 @@ void takeh(string item, int array[][50], string items[])
 		{
 			cout << "I took the key and on it, it said Mayfield" << endl;
 			array[4][0] = 1;
+			items[3] = "key";
 		}
 		else
 		{
 			cout << "Already took that." << endl;
 		}
 	}
-	else if ((item.compare(5, trophy.length(), "trophy") == 0 || item.compare(5, trophy.length(), "trophy") == 0) && array[1][4] == 1)
+	else if ((item.compare(5, trophy.length(), "trophy") == 0 || item.compare(5, trophy.length(), "Trophy") == 0) && array[1][4] == 1)
 	{
 		if (array[4][1] == 0)
 		{
 			cout << "I took the trophy carefully." << endl;
 			array[4][1] = 1;
+			items[4] = "trophy";
 		}
 	}
 	else
@@ -251,11 +253,15 @@ void takeh(string item, int array[][50], string items[])
 
 void itemh(string item, int array[][50], string items[])
 {
-	for (int i = 0; i < 20; i++)
-	{
-		cout << items[i] << endl;
-	}
+		for (int i = 0; i < 20; i++)
+		{
+			if (items[i] != "")
+			{
+				cout << items[i] << endl;
+			}
+		}
 }
+
 
 void talkh(string item, int array[][50])
 {

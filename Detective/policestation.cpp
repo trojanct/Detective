@@ -21,6 +21,7 @@ void chapter4()
 
 	while (psarray[0][0] != 1)
 	{
+		cout << endl;
 		cout << "Talk Michael" << endl;
 		cout << "Talk Louie" << endl;
 		cout << "Evidence" << endl;
